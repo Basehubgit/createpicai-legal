@@ -17,46 +17,49 @@
 </head>
 <body>
 <h1>Privacy Policy</h1>
-<p class="effective">Effective date: May 31, 2026</p>
+<p class="effective">Effective date: June 1, 2026</p>
 
 <p>This Privacy Policy explains how the <strong>CreatePicAI</strong> mobile application ("the App", "we", "our") handles information when you use it. By using the App you agree to the practices described below.</p>
 
 <h2>1. Who we are</h2>
-<p>CreatePicAI is an AI-powered image generation mobile application developed and operated by an independent developer. You can contact us at <a href="mailto:deepthorin@gmail.com">deepthorin@gmail.com</a>.</p>
+<p>CreatePicAI is an AI-powered image generation mobile application developed and operated by an independent developer. You can contact us at <a href="mailto:sepbat8@gmail.com">sepbat8@gmail.com</a>.</p>
 
 <h2>2. Information we process</h2>
-<p>CreatePicAI is designed to be <strong>privacy-friendly and local-first</strong>. We do not require you to create an account, and we do not collect names, email addresses, phone numbers, or any other directly identifying information.</p>
-
-<p>The following information is processed when you use the App:</p>
+<p>To enable account-bound features such as cloud-synced credits and a generation history that follows you across devices, CreatePicAI uses Google Sign-In. The following information is processed when you use the App:</p>
 <ul>
-  <li><strong>Prompts you type</strong> (text describing the image you want). Prompts are sent to our backend proxy and forwarded to our AI provider to generate the image.</li>
-  <li><strong>Reference images you upload</strong> (optional, image-to-image feature). The image is sent to our backend proxy and forwarded to the AI provider. We do not store these images.</li>
-  <li><strong>Generated images</strong>. Returned by the AI provider and shown in the App. URLs to generated images are temporarily cached by your device and may be stored in the App's local history on your device.</li>
-  <li><strong>Local app state</strong> (selected language, theme, credit balance, history of your prompts and generated images, onboarding status). This data is stored only on your device using the operating system's local storage and never leaves your device unless you choose to share content.</li>
-  <li><strong>Standard request metadata</strong> processed by our hosting provider (Render) to deliver the service, such as IP address, request timestamp, and basic HTTP headers. This data is processed only to operate, secure, and debug the service and is not used to build a profile of you.</li>
+  <li><strong>Google account profile</strong> (your Google account ID, email address, display name, and profile picture URL). This is received from Google after you sign in and is stored in our database to identify your account and personalize your profile screen.</li>
+  <li><strong>Prompts you type</strong> (text describing the image you want). Prompts are sent to our backend proxy and forwarded to our AI provider to generate the image. Prompts are also stored together with the generated image URL in your account's history so you can view past creations.</li>
+  <li><strong>Reference images you upload</strong> (optional, image-to-image feature). The image is sent to our backend proxy and forwarded to the AI provider. We do not store these images on our backend after the request completes.</li>
+  <li><strong>Generated image URLs</strong>. Returned by the AI provider and shown in the App. URLs are stored in our database as part of your generation history. The underlying image files are hosted by the AI provider and may expire over time.</li>
+  <li><strong>Credit balance</strong>. The number of generation credits associated with your account is stored in our database.</li>
+  <li><strong>Local app state</strong> (selected language, theme, history cache, onboarding status, authentication token). This data is stored only on your device using the operating system's local storage.</li>
+  <li><strong>Standard request metadata</strong> processed by our hosting providers to deliver the service, such as IP address, request timestamp, and basic HTTP headers. This data is processed only to operate, secure, and debug the service and is not used to build a profile of you.</li>
 </ul>
 
 <p>We do <strong>not</strong> collect:</p>
 <ul>
-  <li>Your name, email, phone, address, or government IDs.</li>
+  <li>Your phone number, address, or government IDs.</li>
   <li>Your contacts, calendar, or location.</li>
   <li>Photos from your gallery — only the specific image you choose to upload is processed.</li>
   <li>Advertising identifiers; the App does not show ads and does not include third-party advertising SDKs.</li>
 </ul>
 
 <h2>3. Third-party processors</h2>
-<p>To deliver the core feature of the App (AI image generation), we use the following third-party services:</p>
+<p>To deliver the core feature of the App (AI image generation, sign-in and cloud sync) we use the following third-party services:</p>
 <ul>
-  <li><strong>Replicate, Inc.</strong> — hosts the AI image generation models (Flux 1.1 Pro and Flux 1.1 Pro Ultra by Black Forest Labs). Your prompt and any reference image you upload are sent to Replicate for the sole purpose of generating the requested image. See Replicate's privacy policy: <a href="https://replicate.com/privacy" target="_blank" rel="noopener">https://replicate.com/privacy</a>.</li>
+  <li><strong>Google LLC</strong> — provides Google Sign-In and the OAuth identity service used to authenticate you. See Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.</li>
+  <li><strong>Replicate, Inc.</strong> — hosts the AI image generation models (Flux 1.1 Pro Ultra by Black Forest Labs). Your prompt and any reference image you upload are sent to Replicate for the sole purpose of generating the requested image. See Replicate's privacy policy: <a href="https://replicate.com/privacy" target="_blank" rel="noopener">https://replicate.com/privacy</a>.</li>
   <li><strong>Render Services, Inc.</strong> — hosts our backend proxy that securely forwards requests to Replicate without exposing API credentials on your device. See Render's privacy policy: <a href="https://render.com/privacy" target="_blank" rel="noopener">https://render.com/privacy</a>.</li>
+  <li><strong>Supabase Inc.</strong> — hosts the PostgreSQL database that stores your account, credit balance and generation history. See Supabase's privacy policy: <a href="https://supabase.com/privacy" target="_blank" rel="noopener">https://supabase.com/privacy</a>.</li>
 </ul>
 
 <p>For non-English prompts, the prompt is translated to English before being passed to the image model, using a language model hosted on Replicate. The translation is performed for image generation purposes only and is not stored.</p>
 
 <h2>4. How long we keep data</h2>
 <ul>
+  <li><strong>Account data and history</strong> (account profile, credit balance, prompts, image URLs): kept until you delete individual items or sign out and request account deletion via the support email below.</li>
   <li><strong>On your device:</strong> until you delete the data from within the App or uninstall the App.</li>
-  <li><strong>On our backend:</strong> we do not maintain a database of user prompts or generated images. Prompts and image references are processed in transit and not persisted on our servers beyond standard request logs, which are kept for a short period for security and debugging and are then rotated.</li>
+  <li><strong>On our backend logs:</strong> we do not maintain a long-term log database. Standard request logs are kept for a short period for security and debugging and are then rotated.</li>
   <li><strong>At Replicate:</strong> retention is governed by Replicate's own policies, linked above.</li>
 </ul>
 
@@ -64,24 +67,25 @@
 <p>CreatePicAI is not directed to children under the age of 13 (or the applicable minimum age in your country). We do not knowingly collect personal information from children. If you believe a child has used the App in a way that has resulted in data being processed, please contact us so we can take appropriate action.</p>
 
 <h2>6. Security</h2>
-<p>All network requests between the App and our backend, and between our backend and Replicate, are made over HTTPS. API credentials for Replicate are stored only on our backend and are never embedded in the mobile App.</p>
+<p>All network requests between the App and our backend, between our backend and Replicate, and between our backend and the database, are made over HTTPS or TLS. API credentials for Replicate and database credentials are stored only on our backend and are never embedded in the mobile App. Sign-in tokens are stored only on your device's secure local storage and on our backend in transit during request authentication.</p>
 
 <h2>7. Your rights</h2>
-<p>Because the App stores most data locally on your device and does not associate data with a personal identifier, the most effective ways to exercise your rights are to:</p>
+<p>You have the following choices regarding your data:</p>
 <ul>
-  <li>Delete individual items from your history inside the App.</li>
-  <li>Uninstall the App, which removes all locally stored data.</li>
-  <li>Contact us at <a href="mailto:deepthorin@gmail.com">deepthorin@gmail.com</a> with any question regarding your data. If you are located in the EU/EEA, UK, or California, you have the right to ask whether we process personal data relating to you, to request deletion, and to lodge a complaint with your local data protection authority.</li>
+  <li><strong>Delete individual items</strong> from your history inside the App.</li>
+  <li><strong>Sign out</strong> from the App, which removes your authentication token from the device.</li>
+  <li><strong>Uninstall the App</strong>, which removes all locally stored data. Your account data on our backend is retained unless you request deletion.</li>
+  <li><strong>Account deletion</strong>: contact us at <a href="mailto:sepbat8@gmail.com">sepbat8@gmail.com</a> with the subject "Account deletion" and the email address you used to sign in. We will remove your account, credit balance and generation history from our database. If you are located in the EU/EEA, UK, or California, you have the right to ask whether we process personal data relating to you, to request access, correction, or deletion, and to lodge a complaint with your local data protection authority.</li>
 </ul>
 
 <h2>8. AI-generated content</h2>
-<p>Images created with the App are generated by an AI model based on your prompt. You can use the in-app <em>Report content</em> button to flag any generated content you believe violates our content policy (sexual content involving minors, hate or violent content targeting protected groups, copyright infringement, or other concerns). Reports help us improve safety.</p>
+<p>Images created with the App are generated by an AI model based on your prompt. You can delete any generated content from your account at any time. If you believe a piece of content violates our policy or applicable law, please contact us at the support email below.</p>
 
 <h2>9. Changes to this policy</h2>
 <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Material changes will be communicated inside the App where reasonable.</p>
 
 <h2>10. Contact</h2>
-<p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:deepthorin@gmail.com">deepthorin@gmail.com</a>.</p>
+<p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:sepbat8@gmail.com">sepbat8@gmail.com</a>.</p>
 
 <p style="margin-top:48px;"><a href="../">&larr; Back</a></p>
 </body>
